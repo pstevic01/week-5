@@ -1,4 +1,5 @@
 import copy
+
 # Week 5 - If Statements Assignment
 
 # Step 1: Create a single list that contains the collection of data in the order provided
@@ -19,7 +20,7 @@ employee_info_list = [
 
 # Step 2: Removing bool values and converting employee info list to list of employee dictionaries
 
-updated_employee_list = [item for item in employee_info_list if not isinstance(item, bool)] # removing bool values
+updated_employee_list = [item for item in employee_info_list if not isinstance(item, bool)]
 parsed_employees = []
 i = 0
 
@@ -46,7 +47,7 @@ while i < len(updated_employee_list) - 2:
         i += 1
 
 
-# Step 3: Remove duplicates 
+# Step 3: Removeing duplicates 
 
 unique_employees = []
 identifier_found = set()
@@ -89,8 +90,6 @@ for employee in unique_employees:
 company_raises = []
 
 for employee in unique_employees:
-
-    # Calculate raise amount
     rate = employee["hourly_rate"]
     if 22 <= rate < 24:
         raise_amt = round(rate * 0.05, 2)
@@ -101,9 +100,7 @@ for employee in unique_employees:
     else:
         raise_amt = round(rate * 0.02, 2)
 
-    employee["raise_amount"] = raise_amt  # Store in employee dictionary
-
-    # Store in company_raises
+    employee["raise_amount"] = raise_amt
     company_raises.append({
         "name": employee["name"],
         "raise_amount": raise_amt
@@ -111,7 +108,7 @@ for employee in unique_employees:
 
 # Step 7: Print outputs
 
-print("\nList of employees hourly rate:")
+print("\nEmployees with their hourly rates:")
 for employee in total_hourly_rate:
     print(employee)
 
